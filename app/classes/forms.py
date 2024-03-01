@@ -10,6 +10,7 @@ from wtforms import StringField, SubmitField, TextAreaField, IntegerField, Selec
 from wtforms_components import TimeField
 
 class ProfileForm(FlaskForm):
+    role = SelectField('Role', choices=[("Teacher", "Teacher"), ("Student", "Student")])
     fname = StringField('First Name', validators=[DataRequired()])
     lname = StringField('Last Name', validators=[DataRequired()]) 
     image = FileField("Image") 
